@@ -1,0 +1,15 @@
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\bin\Debug\net6.0\Example001-hello-world.exe
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\bin\Debug\net6.0\Example001-hello-world.deps.json
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\bin\Debug\net6.0\Example001-hello-world.runtimeconfig.json
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\bin\Debug\net6.0\Example001-hello-world.dll
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\bin\Debug\net6.0\Example001-hello-world.pdb
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\obj\Debug\net6.0\Example001-hello-world.csproj.AssemblyReference.cache
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\obj\Debug\net6.0\Example001-hello-world.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\obj\Debug\net6.0\Example001-hello-world.AssemblyInfoInputs.cache
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\obj\Debug\net6.0\Example001-hello-world.AssemblyInfo.cs
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\obj\Debug\net6.0\Example001-hello-world.csproj.CoreCompileInputs.cache
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\obj\Debug\net6.0\Example001-hello-world.dll
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\obj\Debug\net6.0\refint\Example001-hello-world.dll
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\obj\Debug\net6.0\Example001-hello-world.pdb
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\obj\Debug\net6.0\Example001-hello-world.genruntimeconfig.cache
+D:\Project\tutorials\geekBrains\cSharp\Examples\Example001-hello-world\obj\Debug\net6.0\ref\Example001-hello-world.dll
