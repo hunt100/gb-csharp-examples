@@ -1,14 +1,11 @@
-﻿// Напишите программу, которая будет принимать на вход два числа и выводить, является ли второе число кратным первому.
-// Если число 2 не кратно числу 1, то программа выводит остаток от деление.
-// 34, 5 -> не кратно, остаток 4 
-// 16, 4 -> кратно
+﻿// Напишите программу, которая принимает на вход число и проверяет, кратно ли оно одновременно 7 и 23.
+// 14 -> нет 
+// 46 -> нет 
+// 161 -> да
 
-Console.WriteLine("Input first num: ");
-int firstNum = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Input second num: ");
-int secondNum = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input num: ");
+int num = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine(firstNum % secondNum == 0
-    ? "Division without reminder"
-    : $"Division with reminder! Reminder: {firstNum % secondNum}");
+bool result = num % 7 == 0 && num % 23 == 0;
+Console.WriteLine($"Input value: {num}. Is division on 7 and 23 is without reminder? {result}");
