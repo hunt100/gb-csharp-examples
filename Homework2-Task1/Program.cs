@@ -6,9 +6,9 @@
 
 Console.WriteLine("Write number: ");
 int num = Convert.ToInt32(Console.ReadLine());
-GetSecondNumber(num);
+GetSecondDigit(num);
 
-static void GetSecondNumber(int num)
+static void GetSecondDigit(int num)
 {
     if (num < 100 || num >= 1000)
     {
@@ -17,5 +17,5 @@ static void GetSecondNumber(int num)
     }
 
     int res = num / 10 % 10;
-    Console.WriteLine($"Second number of {num} is {res}");
+    Console.WriteLine($"Second digit of {num} is {res}");
 }
