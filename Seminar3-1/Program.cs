@@ -1,36 +1,24 @@
-﻿int Prompt(string message)
+﻿// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 2D пространстве.
+// A (3,6); B (2,1) -> 5,09 
+// A (7,-5); B (1,-1) -> 7,21
+// AB = √(xb - xa)^2 + (yb - ya)^2
+double Prompt(string message)
 {
     Console.WriteLine(message);
     return Convert.ToInt32(Console.ReadLine());
 }
 
-bool ValidateInput(int quarterPart)
+double GetSegmentLength(double aX, double aY, double bX, double bY)
 {
-    return quarterPart > 0 && quarterPart <= 4;
+    double leftPart = Math.Pow((bX - aX), 2);
+    double rightPart = Math.Pow((bY - aY), 2);
+    return Math.Sqrt(leftPart + rightPart);
 }
 
-string GetCoordQuarter()
-{
-    int quarterPart = Prompt("Write down the quarterPart:");
+double aX = Prompt("Write down A point x coordinate:");
+double aY = Prompt("Write down A point y coordinate:");
+double bX = Prompt("Write down B point x coordinate:");
+double bY = Prompt("Write down B point y coordinate:");
 
-    if (!ValidateInput(quarterPart))
-    {
-        throw new ArgumentException("Illegal quarter part value");
-    }
-
-    const string allPositivePart = "(0; +Inf),(0; +Inf)";
-    const string xPosYNegPart = "(0; +Inf),(0; -Inf)";
-    const string allNegativePart = "(0; -Inf),(0; -Inf)";
-    const string xNegYPostPart = "(0; -Inf),(0; +Inf)";
-    switch (quarterPart)
-    {
-        case 1: return allPositivePart;
-        case 2: return xNegYPostPart;
-        case 3: return allNegativePart;
-        case 4: return xPosYNegPart;
-    }
-
-    throw new ArgumentException("Argument mismatch!");
-}
-
-Console.WriteLine($"Coordinate by quarter: {GetCoordQuarter()}");
+Console.WriteLine($"A({aX}, {aY}); B({bX}, {bY})");
+Console.WriteLine($"Distance of AB -> {Math.Round(GetSegmentLength(aX, aY, bX, bY), 3)}");
