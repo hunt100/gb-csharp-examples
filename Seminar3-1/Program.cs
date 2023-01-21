@@ -4,37 +4,33 @@
     return Convert.ToInt32(Console.ReadLine());
 }
 
-bool ValidateInput(int x, int y)
+bool ValidateInput(int quarterPart)
 {
-    return x != 0 && y != 0;
+    return quarterPart > 0 && quarterPart <= 4;
 }
 
-int GetCoordQuarter()
+string GetCoordQuarter()
 {
-    int x = Prompt("Write down the x coord:");
-    int y = Prompt("Write down the y coord:");
+    int quarterPart = Prompt("Write down the quarterPart:");
 
-    if (!ValidateInput(x, y))
+    if (!ValidateInput(quarterPart))
     {
-        throw new ArgumentException("Illegal coordinates value");
-    }
-    
-    // 1 && 1 = 1
-    // 1 && -1 = 4
-    // -1 && -1 = 3
-    // -1 && 1 = 2
-
-    if (x > 0)
-    {
-        return y > 0 ? 1 : 4;
+        throw new ArgumentException("Illegal quarter part value");
     }
 
-    return y > 0 ? 2 : 3;
+    const string allPositivePart = "(0; +Inf),(0; +Inf)";
+    const string xPosYNegPart = "(0; +Inf),(0; -Inf)";
+    const string allNegativePart = "(0; -Inf),(0; -Inf)";
+    const string xNegYPostPart = "(0; -Inf),(0; +Inf)";
+    switch (quarterPart)
+    {
+        case 1: return allPositivePart;
+        case 2: return xNegYPostPart;
+        case 3: return allNegativePart;
+        case 4: return xPosYNegPart;
+    }
+
+    throw new ArgumentException("Argument mismatch!");
 }
 
-Console.WriteLine($"Coordinate quarter: {GetCoordQuarter()}");
-
-
-
-
-
+Console.WriteLine($"Coordinate by quarter: {GetCoordQuarter()}");
