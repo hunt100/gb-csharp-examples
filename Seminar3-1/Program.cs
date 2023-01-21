@@ -1,25 +1,16 @@
-﻿// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу квадратов чисел от 1 до N.
-// 5 -> 1, 4, 9, 16, 25.
-// 2 -> 1,4
-int Prompt(string message)
-{
-    Console.WriteLine(message);
-    return Convert.ToInt32(Console.ReadLine());
-}
+﻿// Напишите программу, которая генерирует последовательность случайных чисел из 10 элементов в диапазоне от 1 до 10,
+// и подсчитывает, сколько сгенерировалось чисел больше 5.
+Random random = new Random();
 
-bool ValidateInput(int input)
+int counter = 0;
+for (int i = 0; i < 10; i++)
 {
-    return input > 0;
+    int nextInt = random.Next(1, 11);
+    if (nextInt > 5)
+    {
+        counter++;
+    }
+    Console.Write(nextInt + " ");
 }
-
-int num = Prompt("Write down N:");
-if (!ValidateInput(num))
-{
-    throw new ArgumentException("Illegal argument of N: Not in range [1; +Inf)");
-}
-
-for (int i = 1; i <= num; i++)
-{
-    Console.Write(Math.Pow(i, 2));
-    Console.Write(i == num ? "." : ", ");
-}
+Console.WriteLine();
+Console.WriteLine($"Numbers more than 5: {counter}");
