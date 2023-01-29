@@ -25,12 +25,9 @@ int[] CreateArray(int size)
 int OddPositionSum(int[] arr)
 {
     int sum = 0;
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if (i % 2 != 0)
-        {
-            sum += arr[i];
-        }
+    for (int i = 1; i < arr.Length; i+=2)
+    { 
+        sum += arr[i];
     }
 
     return sum;
