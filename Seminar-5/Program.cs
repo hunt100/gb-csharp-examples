@@ -1,8 +1,6 @@
-﻿// Не используя рекурсию, выведите первые N чисел Фибоначчи. Первые два числа Фибоначчи: 0 и 1.
-//     Если N = 5 -> 0 1 1 2 3
-// Если N = 3 -> 0 1 1
-// Если N = 7 -> 0 1 1 2 3 5 8
+﻿// Задача 4: Напишите программу, которая будет создавать копию заданного массива с помощью поэлементного копирования.
 
+Random random = new Random();
 
 int Prompt(string message)
 {
@@ -10,18 +8,42 @@ int Prompt(string message)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-void PrintFib(int num)
+int[] FillArray(int size)
 {
-    int first = 0;
-    int second = 1;
-    for (int i = 0; i < num; i++)
+    int[] arr = new int[size];
+    for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write($"{first} ");
-        int temp = first + second;
-        first = second;
-        second = temp;
+        arr[i] = random.Next(1, 10);
+    }
+    return arr;
+}
+
+void Clone(int[] from, int[] where)
+{
+    for (int i = 0; i < from.Length; i++)
+    {
+        where[i] = from[i];
+    }    
+}
+
+void PrintArray(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i] + " ");
     }
 }
 
-int num = Prompt("Write a number: ");
-PrintFib(num);
+int arrASize = Prompt("Write down size of arr a:");
+int[] a = FillArray(arrASize);
+int[] b = new int[a.Length];
+Clone(a, b);
+PrintArray(a);
+Console.WriteLine();
+PrintArray(b);
+Console.WriteLine();
+a[0] = 1337;
+PrintArray(a);
+Console.WriteLine();
+PrintArray(b);
+Console.WriteLine();
