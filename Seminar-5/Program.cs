@@ -1,7 +1,8 @@
-﻿// Задача 2: Напишите программу, которая будет преобразовывать десятичное число в двоичное.
-// 45 -> 101101
-// 3  -> 11
-// 2  -> 10
+﻿// Не используя рекурсию, выведите первые N чисел Фибоначчи. Первые два числа Фибоначчи: 0 и 1.
+//     Если N = 5 -> 0 1 1 2 3
+// Если N = 3 -> 0 1 1
+// Если N = 7 -> 0 1 1 2 3 5 8
+
 
 int Prompt(string message)
 {
@@ -9,25 +10,18 @@ int Prompt(string message)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-void PrintAsBinaryNum(int num)
+void PrintFib(int num)
 {
-    string binStr = "";
-    if (num == 0)
+    int first = 0;
+    int second = 1;
+    for (int i = 0; i < num; i++)
     {
-        Console.WriteLine("0");
-        return;
+        Console.Write($"{first} ");
+        int temp = first + second;
+        first = second;
+        second = temp;
     }
-    
-    while (num > 0)
-    {
-        int reminder = num % 2;
-        binStr += reminder;
-        num /= 2;
-    }
-
-    Console.WriteLine($"Own bin: {new string(binStr.Reverse().ToArray())}");
 }
 
 int num = Prompt("Write a number: ");
-Console.WriteLine($"binary: {Convert.ToString(num, 2)}");
-PrintAsBinaryNum(num);
+PrintFib(num);
